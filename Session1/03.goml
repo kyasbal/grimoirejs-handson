@@ -1,0 +1,12 @@
+<goml>
+  <scene>
+    <camera>
+      <camera.components>
+        <MouseCameraControl/>
+      </camera.components>
+    </camera>
+    <mesh geometry="cube" texture="./logo.png"/>
+    <light type="directional" rotation="30d,30d,30d" intensity="1"/>
+    <light type="point" position="0,1.2,0" color="blue" intensity="10"/>
+  </scene>
+</goml>

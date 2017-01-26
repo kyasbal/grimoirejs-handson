@@ -1,0 +1,10 @@
+<goml>
+  <scene>
+    <camera far="1000">
+      <camera.components>
+        <MouseCameraControl/>
+      </camera.components>
+    </camera>
+    <model src="./VC.glb"/>
+  </scene>
+</goml>
