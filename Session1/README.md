@@ -17,3 +17,11 @@ https://unpkg.com/grimoirejs-gltf@beta/register/grimoire-gltf.min.js
 
 **通常**
 https://unpkg.com/grimoirejs-gltf@beta/register/grimoire-gltf.js
+
+### grimoirejs-forward-shading
+
+**minify**済み
+https://unpkg.com/grimoirejs-forward-shading@beta/register/grimoire-forward-shading.min.js
+
+**通常**
+https://unpkg.com/grimoirejs-forward-shading@beta/register/grimoire-forward-shading.js
