@@ -1,5 +1,5 @@
 <goml>
-  <import-material typeName="custom" src="./01.sort"/>
+  <import-material typeName="custom" src="./02.sort"/>
   <scene>
     <camera>
       <camera.components>
