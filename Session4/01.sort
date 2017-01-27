@@ -1,0 +1,79 @@
+@Pass{
+  FS_PREC(mediump,float)
+
+  varying vec2 vUV;
+
+  #ifdef VS
+    attribute vec3 position;
+    attribute vec2 texCoord;
+    uniform mat4 _matPVM;
+    void main(){
+      gl_Position = vec4(position,1);
+      vUV = texCoord;
+    }
+  #endif
+
+  #ifdef FS
+
+  uniform float _time;
+
+  @{type:"color",default:"cyan"}
+  uniform vec3 color;
+
+  // 波
+  vec3 wave(vec3 c, vec2 p, float t, float i) {
+    // 大きい方の回転
+    float r = sin(p.x * 2. + t * .8) * .31 + sin(p.x + t * .323) * .07 - .2;
+
+    // 小さい方の半径
+    float sr = .08 + pow(abs(sin((t * 2.37 + (i * -.7) + sin(t * .7)) * .4) * .3), 3.) * 6.;
+    // 小さい方の回転
+    float s = sin(p.x * 1.77 + t * .13 + i * .2) * sr;
+
+    // 明るさ
+    float b = max(pow(1. - abs(sin(p.x * 54.8 + i * 2.) + sin(p.x * 100.8 + i * 30. + (t + i * .001) * 3.)), 10.) * .001, .0001);
+
+    return b / abs(p.y + s + r) * c * .8;
+  }
+
+  // 円
+  float circle(in vec2 p, in float r) {
+    return abs(length(p) - r);
+  }
+
+  // 煙
+  vec3 smoke(vec3 c, vec2 p, float t, float i) {
+    t = fract((t + (i * .362)) * .1);
+
+    // 座標
+    float x = p.x + tan(i * 27.0) + sin(i * 19.34387) + t - .7;
+    float y = p.y + 1.27 - (t * 1.5);
+
+    // 円
+    float ci = 1.0 - smoothstep(-.2, .6, circle(vec2(x, y), .0));
+
+    // 色
+    vec3 cc = c * .3 * (1. - t);
+
+    return cc * ci;
+  }
+
+  void main() {
+    vec2 p = vUV;
+
+    vec3 col = vec3(0., 0., 0.);
+
+    const float n = 30.;
+    for (float i = 0.; i < n; i++) {
+      col = col + wave(color, p, _time/1000., i);
+    }
+
+    const float m = 50.;
+    for (float j = 0.; j < m; j++) {
+      col = col + smoke(color, p, _time/1000., j);
+    }
+    gl_FragColor = vec4(col, length(col));
+  }
+
+  #endif
+}
