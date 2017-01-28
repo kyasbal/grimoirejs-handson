@@ -1,0 +1,10 @@
+/* not required */
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+#canvas-container {
+  user-select: none;
+}

@@ -1,0 +1,11 @@
+<goml height="512" width="512">
+  <scene>
+    <camera>
+      <camera.components>
+        <MouseCameraControl></MouseCameraControl>
+      </camera.components>
+    </camera>
+    <light type="directional" rotation="30,30,30"></light>
+    <mesh geometry="cube"></mesh>
+  </scene>
+</goml>
