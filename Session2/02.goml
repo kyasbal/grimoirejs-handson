@@ -1,0 +1,15 @@
+<goml width="fit" height="512">
+    <geometry type="plane" name="plane"></geometry>
+    <scene>
+        <camera>
+            <camera.components>
+                <MouseCameraControl></MouseCameraControl>
+            </camera.components>
+        </camera>
+        <mesh color="green" geometry="plane">
+            <mesh.components>
+                <Rotate></Rotate>
+            </mesh.components>
+        </mesh>
+    </scene>
+</goml>

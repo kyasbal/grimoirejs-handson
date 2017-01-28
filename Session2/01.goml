@@ -1,0 +1,6 @@
+<goml>
+  <scene>
+    <camera/>
+    <mesh id="cube" color="red" geometry="cube"/>
+  </scene>
+</goml>
