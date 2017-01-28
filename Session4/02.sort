@@ -15,9 +15,6 @@
 
   #ifdef FS
 
-  #ifdef GL_ES
-  precision mediump float;
-  #endif
   #define time _time/1000.
 
   uniform float _time;
@@ -33,7 +30,8 @@
   #define tile   0.850
   #define speed2  0.10
 
-  #define brightness 0.003
+  @{default:0.003}
+  uniform float brightness;
   #define darkmatter 0.400
   #define distfading 0.560
   #define saturation 0.800

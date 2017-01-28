@@ -1,0 +1,21 @@
+@Pass{
+  FS_PREC(mediump,float)
+  #ifdef VS
+
+    attribute vec3 position;
+
+    void main(){
+      gl_Position = vec4(position,1);
+    }
+  #endif
+
+  #ifdef FS
+
+    @{type:"color",default:"yellow"}
+    uniform vec4 color;
+
+    void main(){
+      gl_FragColor = color;
+    }
+  #endif
+}

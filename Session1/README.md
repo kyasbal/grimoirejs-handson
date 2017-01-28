@@ -1,5 +1,9 @@
 # Grimoire.js はじめに/さわってみよう
 
+## Grimoire.js Inspector
+
+https://chrome.google.com/webstore/detail/grimoirejs-devtool/omimnfbmgdcigbdpehonlfbjhdajakhn?authuser=1
+
 ## CDNのリンク
 
 ### grimoirejs-preset-basic
