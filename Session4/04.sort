@@ -1,0 +1,22 @@
+@Pass{
+  FS_PREC(mediump,float)
+  #ifdef VS
+
+    attribute vec3 position;
+
+    void main(){
+      gl_Position = vec4(position,1);
+    }
+  #endif
+
+  #ifdef FS
+
+    uniform float _time;
+
+    uniform vec3 offset;
+
+    void main(){
+      gl_FragColor = abs(vec4(sin(_time/1000. + offset.x),sin(_time/1000. + offset.y),sin(_time/1000. + offset.z),1.0));
+    }
+  #endif
+}

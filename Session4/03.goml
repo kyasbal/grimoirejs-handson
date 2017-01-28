@@ -1,6 +1,6 @@
 <goml>
-  <import-material typeName="custom" src="./02.sort"/>
+  <import-material typeName="custom" src="./04.sort"/>
   <renderer>
-    <render-quad material="new(custom)"/>
+    <render-quad material="new(custom)" offset="1.0,2.0,3.0"/>
   </renderer>
 </goml>
