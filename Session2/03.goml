@@ -1,14 +1,13 @@
 <goml width="fit" height="512">
-    <geometry type="plane" name="plane"></geometry>
     <scene>
         <camera>
             <camera.components>
                 <MouseCameraControl></MouseCameraControl>
             </camera.components>
         </camera>
-        <mesh color="green" geometry="plane">
+        <mesh color="orange" geometry="sphere" position="0,-1.5,0" scale="0.5">
             <mesh.components>
-                <Rotate></Rotate>
+                <Rigid move="false"></Rigid>
             </mesh.components>
         </mesh>
     </scene>
